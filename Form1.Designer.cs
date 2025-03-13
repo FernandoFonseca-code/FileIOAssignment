@@ -33,13 +33,13 @@ namespace FileIOAssignment
             fileToolStripMenuItem = new ToolStripMenuItem();
             openFileToolStripMenuItem = new ToolStripMenuItem();
             saveFileToolStripMenuItem = new ToolStripMenuItem();
-            rTxtBxContent = new RichTextBox();
-            rTxtBxEncrypted = new RichTextBox();
+            rTxtBxUnEncryptedInput = new RichTextBox();
+            rTxtBxEncryptedOutput = new RichTextBox();
             label1 = new Label();
             label2 = new Label();
             btnEncrypt = new Button();
-            richTextBox1 = new RichTextBox();
-            richTextBox2 = new RichTextBox();
+            rTxtBxEncryptedInput = new RichTextBox();
+            rTxtBxDecryptOutput = new RichTextBox();
             label3 = new Label();
             label4 = new Label();
             btnDecrypt = new Button();
@@ -78,23 +78,23 @@ namespace FileIOAssignment
             saveFileToolStripMenuItem.Text = "Save File...";
             saveFileToolStripMenuItem.Click += saveFileToolStripMenuItem_Click;
             // 
-            // rTxtBxContent
+            // rTxtBxUnEncryptedInput
             // 
-            rTxtBxContent.Location = new Point(18, 200);
-            rTxtBxContent.Name = "rTxtBxContent";
-            rTxtBxContent.ReadOnly = true;
-            rTxtBxContent.Size = new Size(408, 153);
-            rTxtBxContent.TabIndex = 1;
-            rTxtBxContent.Text = "";
+            rTxtBxUnEncryptedInput.Location = new Point(18, 200);
+            rTxtBxUnEncryptedInput.Name = "rTxtBxUnEncryptedInput";
+            rTxtBxUnEncryptedInput.ReadOnly = true;
+            rTxtBxUnEncryptedInput.Size = new Size(408, 153);
+            rTxtBxUnEncryptedInput.TabIndex = 1;
+            rTxtBxUnEncryptedInput.Text = "";
             // 
-            // rTxtBxEncrypted
+            // rTxtBxEncryptedOutput
             // 
-            rTxtBxEncrypted.Location = new Point(501, 200);
-            rTxtBxEncrypted.Name = "rTxtBxEncrypted";
-            rTxtBxEncrypted.ReadOnly = true;
-            rTxtBxEncrypted.Size = new Size(408, 153);
-            rTxtBxEncrypted.TabIndex = 2;
-            rTxtBxEncrypted.Text = "";
+            rTxtBxEncryptedOutput.Location = new Point(501, 200);
+            rTxtBxEncryptedOutput.Name = "rTxtBxEncryptedOutput";
+            rTxtBxEncryptedOutput.ReadOnly = true;
+            rTxtBxEncryptedOutput.Size = new Size(408, 153);
+            rTxtBxEncryptedOutput.TabIndex = 2;
+            rTxtBxEncryptedOutput.Text = "";
             // 
             // label1
             // 
@@ -124,23 +124,23 @@ namespace FileIOAssignment
             btnEncrypt.UseVisualStyleBackColor = true;
             btnEncrypt.Click += BtnEncrypt_Click;
             // 
-            // richTextBox1
+            // rTxtBxEncryptedInput
             // 
-            richTextBox1.Location = new Point(18, 507);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.ReadOnly = true;
-            richTextBox1.Size = new Size(408, 153);
-            richTextBox1.TabIndex = 6;
-            richTextBox1.Text = "";
+            rTxtBxEncryptedInput.Location = new Point(18, 507);
+            rTxtBxEncryptedInput.Name = "rTxtBxEncryptedInput";
+            rTxtBxEncryptedInput.ReadOnly = true;
+            rTxtBxEncryptedInput.Size = new Size(408, 153);
+            rTxtBxEncryptedInput.TabIndex = 6;
+            rTxtBxEncryptedInput.Text = "";
             // 
-            // richTextBox2
+            // rTxtBxDecryptOutput
             // 
-            richTextBox2.Location = new Point(501, 507);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.ReadOnly = true;
-            richTextBox2.Size = new Size(408, 153);
-            richTextBox2.TabIndex = 7;
-            richTextBox2.Text = "";
+            rTxtBxDecryptOutput.Location = new Point(501, 507);
+            rTxtBxDecryptOutput.Name = "rTxtBxDecryptOutput";
+            rTxtBxDecryptOutput.ReadOnly = true;
+            rTxtBxDecryptOutput.Size = new Size(408, 153);
+            rTxtBxDecryptOutput.TabIndex = 7;
+            rTxtBxDecryptOutput.Text = "";
             // 
             // label3
             // 
@@ -168,6 +168,7 @@ namespace FileIOAssignment
             btnDecrypt.TabIndex = 10;
             btnDecrypt.Text = "Decrypt";
             btnDecrypt.UseVisualStyleBackColor = true;
+            btnDecrypt.Click += BtnDecrypt_Click;
             // 
             // Form1
             // 
@@ -177,13 +178,13 @@ namespace FileIOAssignment
             Controls.Add(btnDecrypt);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(richTextBox2);
-            Controls.Add(richTextBox1);
+            Controls.Add(rTxtBxDecryptOutput);
+            Controls.Add(rTxtBxEncryptedInput);
             Controls.Add(btnEncrypt);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(rTxtBxEncrypted);
-            Controls.Add(rTxtBxContent);
+            Controls.Add(rTxtBxEncryptedOutput);
+            Controls.Add(rTxtBxUnEncryptedInput);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 5, 4, 5);
@@ -201,13 +202,13 @@ namespace FileIOAssignment
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem openFileToolStripMenuItem;
         private ToolStripMenuItem saveFileToolStripMenuItem;
-        private RichTextBox rTxtBxContent;
-        private RichTextBox rTxtBxEncrypted;
+        private RichTextBox rTxtBxUnEncryptedInput;
+        private RichTextBox rTxtBxEncryptedOutput;
         private Label label1;
         private Label label2;
         private Button btnEncrypt;
-        private RichTextBox richTextBox1;
-        private RichTextBox richTextBox2;
+        private RichTextBox rTxtBxEncryptedInput;
+        private RichTextBox rTxtBxDecryptOutput;
         private Label label3;
         private Label label4;
         private Button btnDecrypt;
