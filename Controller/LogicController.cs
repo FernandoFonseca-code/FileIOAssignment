@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FileIOAssignment.Controller;
 
-class LogicController
+public class LogicController
 {
     public StringBuilder Encrypt(string input)
     {
@@ -100,7 +100,7 @@ class LogicController
 
         // Higher entropy often indicates encryption or compression
         // This threshold may need adjustment based on your specific use case
-        return entropy > 4.0;
+        return entropy > 4.5;
     }
 
     /// <summary>
@@ -165,9 +165,11 @@ class LogicController
     {
         // List of common English words
         HashSet<string> commonWords = new HashSet<string> {
-        "the", "be", "to", "of", "and", "a", "in", "that", "have", "I",
+        "the", "be", "to", "of", "and", "a", "in", "that", "have", "i",
         "it", "for", "not", "on", "with", "he", "as", "you", "do", "at"
     };
+
+        string lowerText = text.ToLower();
 
         string[] words = text.ToLower().Split(new[] { ' ', '.', ',', '!', '?', ';', ':', '\n', '\r' },
             StringSplitOptions.RemoveEmptyEntries);

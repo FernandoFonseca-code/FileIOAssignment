@@ -12,7 +12,7 @@ public partial class Form1 : Form
         _logicController = new LogicController();
     }
 
-    private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
+    public void openFileToolStripMenuItem_Click(object sender, EventArgs e)
     {
         ClearForm();
         using OpenFileDialog openFileDialog = new();
@@ -31,7 +31,7 @@ public partial class Form1 : Form
         }
     }
 
-    private void DetectEncryption(string fileContents)
+    public void DetectEncryption(string fileContents)
     {
         bool caesarEncrypted = _logicController.IsCaesarCipherEncrypted(fileContents);
         bool likelyEncrypted = _logicController.IsLikelyEncrypted(fileContents);
@@ -55,7 +55,7 @@ public partial class Form1 : Form
         }
     }
 
-    private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
+    public void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
     {
         using SaveFileDialog saveFileDialog = new();
         // Start in the "My Documents" folder.
@@ -79,21 +79,21 @@ public partial class Form1 : Form
         }
     }
 
-    private void BtnEncrypt_Click(object sender, EventArgs e)
+    public void BtnEncrypt_Click(object sender, EventArgs e)
     {
         StringBuilder result = _logicController.Encrypt(rTxtBxUnEncryptedInput.Text);
 
         rTxtBxEncryptedOutput.Text = result.ToString();
     }
 
-    private void BtnDecrypt_Click(object sender, EventArgs e)
+    public void BtnDecrypt_Click(object sender, EventArgs e)
     {
         StringBuilder result = _logicController.Decrypt(rTxtBxEncryptedInput.Text);
 
         rTxtBxDecryptOutput.Text = result.ToString();
     }
 
-    private void ClearForm()
+    public void ClearForm()
     {
         rTxtBxUnEncryptedInput.Clear();
         rTxtBxEncryptedOutput.Clear();

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35825.156 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileIOAssignment", "FileIOAssignment.csproj", "{4084DBE0-6BE8-81A3-FD5B-EAAB7B7CC667}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileIOAssignment.Tests", "..\FileIOAssignment.Tests\FileIOAssignment.Tests.csproj", "{F13B4E8A-0A1D-4F48-98A5-183EF69A3ECC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4084DBE0-6BE8-81A3-FD5B-EAAB7B7CC667}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4084DBE0-6BE8-81A3-FD5B-EAAB7B7CC667}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4084DBE0-6BE8-81A3-FD5B-EAAB7B7CC667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F13B4E8A-0A1D-4F48-98A5-183EF69A3ECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F13B4E8A-0A1D-4F48-98A5-183EF69A3ECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F13B4E8A-0A1D-4F48-98A5-183EF69A3ECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F13B4E8A-0A1D-4F48-98A5-183EF69A3ECC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

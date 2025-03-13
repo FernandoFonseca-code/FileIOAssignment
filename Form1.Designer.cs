@@ -82,7 +82,6 @@ namespace FileIOAssignment
             // 
             rTxtBxUnEncryptedInput.Location = new Point(18, 200);
             rTxtBxUnEncryptedInput.Name = "rTxtBxUnEncryptedInput";
-            rTxtBxUnEncryptedInput.ReadOnly = true;
             rTxtBxUnEncryptedInput.Size = new Size(408, 153);
             rTxtBxUnEncryptedInput.TabIndex = 1;
             rTxtBxUnEncryptedInput.Text = "";
@@ -91,7 +90,6 @@ namespace FileIOAssignment
             // 
             rTxtBxEncryptedOutput.Location = new Point(501, 200);
             rTxtBxEncryptedOutput.Name = "rTxtBxEncryptedOutput";
-            rTxtBxEncryptedOutput.ReadOnly = true;
             rTxtBxEncryptedOutput.Size = new Size(408, 153);
             rTxtBxEncryptedOutput.TabIndex = 2;
             rTxtBxEncryptedOutput.Text = "";
@@ -128,7 +126,6 @@ namespace FileIOAssignment
             // 
             rTxtBxEncryptedInput.Location = new Point(18, 507);
             rTxtBxEncryptedInput.Name = "rTxtBxEncryptedInput";
-            rTxtBxEncryptedInput.ReadOnly = true;
             rTxtBxEncryptedInput.Size = new Size(408, 153);
             rTxtBxEncryptedInput.TabIndex = 6;
             rTxtBxEncryptedInput.Text = "";
@@ -137,7 +134,6 @@ namespace FileIOAssignment
             // 
             rTxtBxDecryptOutput.Location = new Point(501, 507);
             rTxtBxDecryptOutput.Name = "rTxtBxDecryptOutput";
-            rTxtBxDecryptOutput.ReadOnly = true;
             rTxtBxDecryptOutput.Size = new Size(408, 153);
             rTxtBxDecryptOutput.TabIndex = 7;
             rTxtBxDecryptOutput.Text = "";
@@ -202,13 +198,13 @@ namespace FileIOAssignment
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem openFileToolStripMenuItem;
         private ToolStripMenuItem saveFileToolStripMenuItem;
-        private RichTextBox rTxtBxUnEncryptedInput;
-        private RichTextBox rTxtBxEncryptedOutput;
+        public RichTextBox rTxtBxUnEncryptedInput;
+        public RichTextBox rTxtBxEncryptedOutput;
         private Label label1;
         private Label label2;
         private Button btnEncrypt;
-        private RichTextBox rTxtBxEncryptedInput;
-        private RichTextBox rTxtBxDecryptOutput;
+        public RichTextBox rTxtBxEncryptedInput;
+        public RichTextBox rTxtBxDecryptOutput;
         private Label label3;
         private Label label4;
         private Button btnDecrypt;
