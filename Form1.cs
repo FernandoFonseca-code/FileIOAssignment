@@ -4,7 +4,7 @@ namespace FileIOAssignment;
 
 public partial class Form1 : Form
 {
-    
+
 
     public Form1()
     {
@@ -25,8 +25,8 @@ public partial class Form1 : Form
             string filePath = openFileDialog.FileName;
             // Read the file content into a string.
             string fileContents = File.ReadAllText(filePath);
-            // Display file content in a message box.
-            MessageBox.Show(fileContents, "File Content");
+            // Display file content in the RichTextBox.
+            rTxtBxContent.Text = fileContents;
         }
     }
 
@@ -50,39 +50,7 @@ public partial class Form1 : Form
         }
     }
 
-    /// <summary>
-    /// Encrypts the input string using a Caesar cipher by shifting each letter forward.
-    /// Non-letter characters remain unchanged.
-    /// </summary>
-    /// <param name="input">The plain text to encrypt.</param>
-    /// <returns>The encrypted string.</returns>
-    private string Encrypt(string input)
-    {
-        // Constant for the Caesar cipher shift value.
-        const int CaesarShift = 3;
 
-        // Constant for the number of letters in the English alphabet.
-        const int AlphabetLength = 26;
-        StringBuilder result = new StringBuilder();
-
-        foreach (char c in input)
-        {
-            if (char.IsLetter(c))
-            {
-                // Determine if the character is uppercase or lowercase.
-                char offset = char.IsUpper(c) ? 'A' : 'a';
-                // Shift the character and wrap around using the alphabet length.
-                result.Append((char)(((c - offset + CaesarShift) % AlphabetLength) + offset));
-            }
-            else
-            {
-                // Non-letter characters are added unchanged.
-                result.Append(c);
-            }
-        }
-
-        return result.ToString();
-    }
 
     /// <summary>
     /// Decrypts the input string that was encrypted using a Caesar cipher by shifting each letter backward.
@@ -117,5 +85,37 @@ public partial class Form1 : Form
         }
 
         return result.ToString();
+    }
+    /// <summary>
+    /// Encrypts the content of the RichTextBox using a Caesar cipher by shifting each letter forward.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void BtnEncrypt_Click(object sender, EventArgs e)
+    {
+        // Constant for the Caesar cipher shift value.
+        const int CaesarShift = 3;
+
+        // Constant for the number of letters in the English alphabet.
+        const int AlphabetLength = 26;
+        StringBuilder result = new StringBuilder();
+
+        foreach (char c in rTxtBxContent.Text)
+        {
+            if (char.IsLetter(c))
+            {
+                // Determine if the character is uppercase or lowercase.
+                char offset = char.IsUpper(c) ? 'A' : 'a';
+                // Shift the character and wrap around using the alphabet length.
+                result.Append((char)(((c - offset + CaesarShift) % AlphabetLength) + offset));
+            }
+            else
+            {
+                // Non-letter characters are added unchanged.
+                result.Append(c);
+            }
+        }
+
+        rTxtBxEncrypted.Text = result.ToString();
     }
 }

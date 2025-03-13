@@ -1,4 +1,5 @@
-﻿namespace FileIOAssignment
+﻿
+namespace FileIOAssignment
 {
     partial class Form1
     {
@@ -32,15 +33,27 @@
             fileToolStripMenuItem = new ToolStripMenuItem();
             openFileToolStripMenuItem = new ToolStripMenuItem();
             saveFileToolStripMenuItem = new ToolStripMenuItem();
+            rTxtBxContent = new RichTextBox();
+            rTxtBxEncrypted = new RichTextBox();
+            label1 = new Label();
+            label2 = new Label();
+            btnEncrypt = new Button();
+            richTextBox1 = new RichTextBox();
+            richTextBox2 = new RichTextBox();
+            label3 = new Label();
+            label4 = new Label();
+            btnDecrypt = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
+            menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Padding = new Padding(9, 3, 0, 3);
+            menuStrip1.Size = new Size(1143, 35);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -48,30 +61,132 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openFileToolStripMenuItem, saveFileToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(37, 20);
+            fileToolStripMenuItem.Size = new Size(54, 29);
             fileToolStripMenuItem.Text = "File";
             // 
             // openFileToolStripMenuItem
             // 
             openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            openFileToolStripMenuItem.Size = new Size(180, 22);
+            openFileToolStripMenuItem.Size = new Size(201, 34);
             openFileToolStripMenuItem.Text = "Open File...";
             openFileToolStripMenuItem.Click += openFileToolStripMenuItem_Click;
             // 
             // saveFileToolStripMenuItem
             // 
             saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
-            saveFileToolStripMenuItem.Size = new Size(180, 22);
+            saveFileToolStripMenuItem.Size = new Size(201, 34);
             saveFileToolStripMenuItem.Text = "Save File...";
             saveFileToolStripMenuItem.Click += saveFileToolStripMenuItem_Click;
             // 
+            // rTxtBxContent
+            // 
+            rTxtBxContent.Location = new Point(18, 200);
+            rTxtBxContent.Name = "rTxtBxContent";
+            rTxtBxContent.ReadOnly = true;
+            rTxtBxContent.Size = new Size(408, 153);
+            rTxtBxContent.TabIndex = 1;
+            rTxtBxContent.Text = "";
+            // 
+            // rTxtBxEncrypted
+            // 
+            rTxtBxEncrypted.Location = new Point(501, 200);
+            rTxtBxEncrypted.Name = "rTxtBxEncrypted";
+            rTxtBxEncrypted.ReadOnly = true;
+            rTxtBxEncrypted.Size = new Size(408, 153);
+            rTxtBxEncrypted.TabIndex = 2;
+            rTxtBxEncrypted.Text = "";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(38, 169);
+            label1.Name = "label1";
+            label1.Size = new Size(287, 25);
+            label1.TabIndex = 3;
+            label1.Text = "File Content (UNENCRYPTED input)";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(520, 167);
+            label2.Name = "label2";
+            label2.Size = new Size(275, 25);
+            label2.TabIndex = 4;
+            label2.Text = "File Content (ENCRYPTED output)";
+            // 
+            // btnEncrypt
+            // 
+            btnEncrypt.Location = new Point(416, 389);
+            btnEncrypt.Name = "btnEncrypt";
+            btnEncrypt.Size = new Size(127, 69);
+            btnEncrypt.TabIndex = 5;
+            btnEncrypt.Text = "Encrypt";
+            btnEncrypt.UseVisualStyleBackColor = true;
+            btnEncrypt.Click += BtnEncrypt_Click;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(18, 507);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.ReadOnly = true;
+            richTextBox1.Size = new Size(408, 153);
+            richTextBox1.TabIndex = 6;
+            richTextBox1.Text = "";
+            // 
+            // richTextBox2
+            // 
+            richTextBox2.Location = new Point(501, 507);
+            richTextBox2.Name = "richTextBox2";
+            richTextBox2.ReadOnly = true;
+            richTextBox2.Size = new Size(408, 153);
+            richTextBox2.TabIndex = 7;
+            richTextBox2.Text = "";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(24, 473);
+            label3.Name = "label3";
+            label3.Size = new Size(262, 25);
+            label3.TabIndex = 8;
+            label3.Text = "File Content (ENCRYPTED input)";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(524, 478);
+            label4.Name = "label4";
+            label4.Size = new Size(275, 25);
+            label4.TabIndex = 9;
+            label4.Text = "File Content (DECRYPTED output)";
+            // 
+            // btnDecrypt
+            // 
+            btnDecrypt.Location = new Point(416, 698);
+            btnDecrypt.Name = "btnDecrypt";
+            btnDecrypt.Size = new Size(127, 69);
+            btnDecrypt.TabIndex = 10;
+            btnDecrypt.Text = "Decrypt";
+            btnDecrypt.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1143, 837);
+            Controls.Add(btnDecrypt);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(richTextBox2);
+            Controls.Add(richTextBox1);
+            Controls.Add(btnEncrypt);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(rTxtBxEncrypted);
+            Controls.Add(rTxtBxContent);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
@@ -86,5 +201,15 @@
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem openFileToolStripMenuItem;
         private ToolStripMenuItem saveFileToolStripMenuItem;
+        private RichTextBox rTxtBxContent;
+        private RichTextBox rTxtBxEncrypted;
+        private Label label1;
+        private Label label2;
+        private Button btnEncrypt;
+        private RichTextBox richTextBox1;
+        private RichTextBox richTextBox2;
+        private Label label3;
+        private Label label4;
+        private Button btnDecrypt;
     }
 }
